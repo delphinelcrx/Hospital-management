@@ -34,6 +34,7 @@ export class DoctorComponent implements OnInit {
     dialogConfig.autoFocus = true
     dialogConfig.data = {
       title: "Register doctor",
+      buttonName: "Register",
     }
 
     const dialogRef = this.dialog.open(AddDoctorComponent, dialogConfig)
@@ -43,6 +44,28 @@ export class DoctorComponent implements OnInit {
         console.log("Registred doctor: ", data)
         this.dataApi.addDoctor(data)
         this.openSnackBar("Registration of doctor is successfull.", "OK")
+      }
+    })
+  }
+
+  editDoctor(row: any) {
+    if (row.id == null || row.name == null) {
+      return
+    }
+    const dialogConfig = new MatDialogConfig()
+    dialogConfig.disableClose = true
+    dialogConfig.autoFocus = true
+    dialogConfig.data = row
+    dialogConfig.data.title = "Edit doctor"
+    dialogConfig.data.buttonName = "Update"
+    dialogConfig.data.birthdate = row.birthdate.toDate()
+
+    const dialogRef = this.dialog.open(AddDoctorComponent, dialogConfig)
+
+    dialogRef.afterClosed().subscribe((data) => {
+      if (data) {
+        this.dataApi.updateDoctor(data)
+        this.openSnackBar("Doctor is updated successfully.", "OK")
       }
     })
   }
