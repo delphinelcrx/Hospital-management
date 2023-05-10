@@ -1,27 +1,40 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-  >
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-divider></mat-divider>
-    <mat-nav-list>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/patient"><mat-icon>personal_injury</mat-icon>Patient </a>
-      <a mat-list-item routerLinkActive="active" routerLink="dashboard/doctor"><mat-icon>diversity_1</mat-icon>Doctor</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>hospital-management</span>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<ng-container *transloco="let t">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false"
+    >
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-divider></mat-divider>
+      <mat-nav-list>
+        <a mat-list-item routerLinkActive="active" routerLink="dashboard/patient"><mat-icon>personal_injury</mat-icon>{{ t("sidebar.link-patient") }}</a>
+        <a mat-list-item routerLinkActive="active" routerLink="dashboard/doctor"><mat-icon>diversity_1</mat-icon>{{ t("sidebar.link-doctor") }}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div id="header">
+        <mat-toolbar color="primary">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <span>{{ t("sidebar.app-title") }}</span>
+
+          <mat-form-field>
+            <mat-label>Language</mat-label>
+            <mat-select>
+              <mat-option (click)="changeLanguage('en')"> English </mat-option>
+              <mat-option (click)="changeLanguage('fr')"> Francais </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-toolbar>
+      </div>
+
+      <!-- Add Content Here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>

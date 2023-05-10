@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit, inject } from "@angular/core"
 import { FormBuilder, FormGroup, Validators } from "@angular/forms"
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog"
+import { TranslocoService } from "@ngneat/transloco"
 
 @Component({
   selector: "app-add-doctor",
@@ -20,32 +21,36 @@ export class AddDoctorComponent implements OnInit {
   id!: string
   buttonName!: string
   departments: string[] = [
-    "Orthopedics",
-    "Cardiology",
-    "Otorhinolaryngology",
-    "Psychiatry",
-    "Internal medicine",
-    "Radiology",
-    "Surgery",
-    "Pediatrics",
-    "Pulmonology",
-    "General surgery",
-    "Intensive care medicine",
-    "Oncology",
-    "Emergency medicine",
-    "Neonatology",
-    "Hematology",
-    "Pharmacy",
-    "Geriatrics",
-    "Gynaecology",
-    "Cardiac surgery",
-    "Outpatient department",
-    "Intensive care unit",
-    "Operating room",
-    "Casulaty department",
+    this.translocoService.translate("doctors.departments.orthopedics"),
+    this.translocoService.translate("doctors.departments.cardiology"),
+    this.translocoService.translate("doctors.departments.otorhinolaryngology"),
+    this.translocoService.translate("doctors.departments.osychiatry"),
+    this.translocoService.translate("doctors.departments.internalMedicine"),
+    this.translocoService.translate("doctors.departments.radiology"),
+    this.translocoService.translate("doctors.departments.surgery"),
+    this.translocoService.translate("doctors.departments.pediatrics"),
+    this.translocoService.translate("doctors.departments.pulmonology"),
+    this.translocoService.translate("doctors.departments.generalSurgery"),
+    this.translocoService.translate("doctors.departments.intensiveCareMedicine"),
+    this.translocoService.translate("doctors.departments.oncology"),
+    this.translocoService.translate("doctors.departments.emergencyMedicine"),
+    this.translocoService.translate("doctors.departments.neonatology"),
+    this.translocoService.translate("doctors.departments.hematology"),
+    this.translocoService.translate("doctors.departments.pharmacy"),
+    this.translocoService.translate("doctors.departments.geriatrics"),
+    this.translocoService.translate("doctors.departments.gynaecology"),
+    this.translocoService.translate("doctors.departments.cardiacSurgery"),
+    this.translocoService.translate("doctors.departments.outpatientDepartment"),
+    this.translocoService.translate("doctors.departments.intensiveCareUnit"),
+    //"Oncology"
   ]
 
-  constructor(private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) data: any, private dialogRef: MatDialogRef<AddDoctorComponent>) {
+  constructor(
+    private fb: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) data: any,
+    private dialogRef: MatDialogRef<AddDoctorComponent>,
+    private translocoService: TranslocoService
+  ) {
     this.title = data.title
     this.id = data.id
     this.name = data.name

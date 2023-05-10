@@ -7,6 +7,8 @@ import { Doctor } from "src/app/shared/model/doctor"
 import { MatPaginator } from "@angular/material/paginator"
 import { MatSort } from "@angular/material/sort"
 import { MatTableDataSource } from "@angular/material/table"
+import { DeleteDoctorComponent } from "./delete-doctor/delete-doctor.component"
+import { TranslocoService } from "@ngneat/transloco"
 
 @Component({
   selector: "app-doctor",
@@ -21,7 +23,7 @@ export class DoctorComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator
   @ViewChild(MatSort) sort!: MatSort
 
-  constructor(public dialog: MatDialog, private dataApi: DataService, private _snackBar: MatSnackBar) {}
+  constructor(public dialog: MatDialog, private dataApi: DataService, private _snackBar: MatSnackBar, private translocoService: TranslocoService) {}
 
   ngOnInit(): void {
     this.getAllDoctors()
@@ -33,8 +35,8 @@ export class DoctorComponent implements OnInit {
     dialogConfig.disableClose = true
     dialogConfig.autoFocus = true
     dialogConfig.data = {
-      title: "Register doctor",
-      buttonName: "Register",
+      title: this.translocoService.translate("doctors.addDoctor.MatDialog-title"),
+      buttonName: this.translocoService.translate("matDialog.registerButton"),
     }
 
     const dialogRef = this.dialog.open(AddDoctorComponent, dialogConfig)
@@ -43,7 +45,7 @@ export class DoctorComponent implements OnInit {
       if (data) {
         console.log("Registred doctor: ", data)
         this.dataApi.addDoctor(data)
-        this.openSnackBar("Registration of doctor is successfull.", "OK")
+        this.openSnackBar(this.translocoService.translate("doctors.addDoctor.validMessage"), "OK")
       }
     })
   }
@@ -70,6 +72,26 @@ export class DoctorComponent implements OnInit {
     })
   }
 
+  deleteDoctor(row: any) {
+    const dialogConfig = new MatDialogConfig()
+    dialogConfig.disableClose = false
+    dialogConfig.autoFocus = true
+    dialogConfig.data = {
+      title: "Delete doctor",
+      doctorName: row.name,
+    }
+
+    const dialogRef = this.dialog.open(DeleteDoctorComponent, dialogConfig)
+
+    dialogRef.afterClosed().subscribe((data) => {
+      if (data) {
+        console.log("Registred doctor: ", data)
+        this.dataApi.deleteDoctor(row.id)
+        this.openSnackBar("Doctor deleted successfully.", "OK")
+      }
+    })
+  }
+
   getAllDoctors() {
     this.dataApi.getAllDoctors().subscribe((res) => {
       this.doctorsArr = res.map((e: any) => {
@@ -82,6 +104,10 @@ export class DoctorComponent implements OnInit {
       this.dataSource.paginator = this.paginator
       this.dataSource.sort = this.sort
     })
+  }
+
+  viewDoctor(row: any) {
+    window.open("dashboard/doctor/" + row.id, "_blank")
   }
 
   openSnackBar(message: string, action: string) {

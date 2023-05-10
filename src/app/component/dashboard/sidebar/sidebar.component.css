@@ -29,3 +29,15 @@
   color: white !important;
   border-radius: 5px;
 }
+
+#header {
+  display: flex;
+}
+
+#header .mat-toolbar {
+  justify-content: space-between;
+}
+
+#header .mat-toolbar .mat-form-field {
+  font-size: 15px;
+}

@@ -13,10 +13,14 @@ import { DoctorComponent } from "./component/dashboard/doctor/doctor.component"
 import { PatientComponent } from "./component/dashboard/patient/patient.component"
 import { SidebarComponent } from "./component/dashboard/sidebar/sidebar.component"
 import { AddDoctorComponent } from "./component/dashboard/doctor/add-doctor/add-doctor.component"
-import { FormsModule, ReactiveFormsModule } from "@angular/forms"
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { DeleteDoctorComponent } from './component/dashboard/doctor/delete-doctor/delete-doctor.component';
+import { ViewDoctorComponent } from './component/dashboard/doctor/view-doctor/view-doctor.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslocoRootModule } from './transloco-root.module'
 
 @NgModule({
-  declarations: [AppComponent, DoctorComponent, PatientComponent, SidebarComponent, AddDoctorComponent],
+  declarations: [AppComponent, DoctorComponent, PatientComponent, SidebarComponent, AddDoctorComponent, DeleteDoctorComponent, ViewDoctorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +30,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms"
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
+    TranslocoRootModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

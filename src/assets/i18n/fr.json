@@ -1,0 +1,74 @@
+{
+  "sidebar": {
+    "app-title": "Gestion hospitalière",
+    "link-patient": "Patient",
+    "link-doctor": "Docteur"
+  },
+  "matDialog": {
+    "cancelButton": "Fermer",
+    "registerButton": "Enregistrer"
+  },
+  "tab": {
+    "filters-input": "Filtres"
+  },
+  "doctors": {
+    "tab": {
+      "row-name": "Nom",
+      "row-mobile": "Mobile",
+      "row-email": "Email",
+      "row-department": "Département",
+      "row-gender": "Genre",
+      "row-action": "Action",
+      "itemsPerPage": "Eléments par page :"
+    },
+    "addDoctor": {
+      "addDoctor-button": "Ajouter un docteur",
+      "matDialog-title": "Enregistrer un docteur",
+      "matDialog-field-name": "Nom",
+      "matDialog-field-name-error": "Entrer un nom",
+      "matDialog-field-mobile": "Numéro de mobile",
+      "matDialog-field-mobile-error": "Entrer un numéro de mobile valide",
+      "matDialog-field-email": "Email",
+      "matDialog-field-email-error": "Entrer une adresse email valide",
+      "matDialog-field-qualification": "Qualification",
+      "matDialog-field-qualification-error": "Entrer une qualification",
+      "matDialog-field-gender": "Genre",
+      "matDialog-field-gender-male": "Male",
+      "matDialog-field-gender-female": "Femelle",
+      "matDialog-field-gender-other": "Autre",
+      "matDialog-field-department": "Département",
+      "matDialog-field-department-error": "Entrer un département valide",
+      "matDialog-field-birthdate": "Date de naissance",
+      "matDialog-field-birthdate-error": "Choisir une date de naissance valide",
+      "validMessage": "Le doctor est enregistré avec succès."
+    },
+    "actionMenu": {
+      "view": "Voir",
+      "edit": "Modifier",
+      "delete": "Supprimer"
+    },
+    "departments": {
+      "orthopedics": "Orthopédie",
+      "cardiology": "Cardiologie",
+      "otorhinolaryngology": "Otorhinolaryngologie",
+      "osychiatry": "Osychiatrie",
+      "internalMedicine": "Médecine Interne",
+      "radiology": "Radiologie",
+      "surgery": "Chirurgie",
+      "pediatrics": "Pediatrie",
+      "pulmonology": "Pulmonologie",
+      "generalSurgery": "Chirurgie générale",
+      "intensiveCareMedicine": "Soins intensifs",
+      "oncology": "Oncologie",
+      "emergencyMedicine": "Médecine d'urgence",
+      "neonatology": "Neonatologie",
+      "hematology": "Hematologie",
+      "pharmacy": "Pharmacie",
+      "geriatrics": "Gériatrie",
+      "gynaecology": "Gynécologie",
+      "cardiacSurgery": "Chirurgie cardiaque",
+      "outpatientDepartment": "Service ambulatoire",
+      "intensiveCareUnit": "Unité de soins intenses"
+    }
+  }
+}
