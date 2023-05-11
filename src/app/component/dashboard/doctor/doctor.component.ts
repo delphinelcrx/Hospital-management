@@ -35,7 +35,7 @@ export class DoctorComponent implements OnInit {
     dialogConfig.disableClose = true
     dialogConfig.autoFocus = true
     dialogConfig.data = {
-      title: this.translocoService.translate("doctors.addDoctor.MatDialog-title"),
+      title: this.translocoService.translate("doctors.addDoctor.matDialog-title"),
       buttonName: this.translocoService.translate("matDialog.registerButton"),
     }
 

@@ -1,5 +1,7 @@
 <ng-container *transloco="let t">
   <div class="container">
+    <!-- Add doctors button -->
+
     <div class="row">
       <div class="col-sm-6 col-md-4 mt-3">
         <mat-card class="add-doc text-center" (click)="addDoctor()">
@@ -11,12 +13,14 @@
       </div>
     </div>
 
-    <!-- Doctors table -->
+    <!-- Table filter -->
 
     <mat-form-field>
       <mat-label>{{ t("tab.filters-input") }}</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input />
     </mat-form-field>
+
+    <!-- Doctors table -->
 
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>

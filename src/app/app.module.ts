@@ -13,14 +13,24 @@ import { DoctorComponent } from "./component/dashboard/doctor/doctor.component"
 import { PatientComponent } from "./component/dashboard/patient/patient.component"
 import { SidebarComponent } from "./component/dashboard/sidebar/sidebar.component"
 import { AddDoctorComponent } from "./component/dashboard/doctor/add-doctor/add-doctor.component"
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { DeleteDoctorComponent } from './component/dashboard/doctor/delete-doctor/delete-doctor.component';
-import { ViewDoctorComponent } from './component/dashboard/doctor/view-doctor/view-doctor.component';
-import { HttpClientModule } from '@angular/common/http';
-import { TranslocoRootModule } from './transloco-root.module'
+import { FormsModule, ReactiveFormsModule } from "@angular/forms"
+import { DeleteDoctorComponent } from "./component/dashboard/doctor/delete-doctor/delete-doctor.component"
+import { ViewDoctorComponent } from "./component/dashboard/doctor/view-doctor/view-doctor.component"
+import { HttpClientModule } from "@angular/common/http"
+import { TranslocoRootModule } from "./transloco-root.module"
+import { AddPatientComponent } from "./component/dashboard/patient/add-patient/add-patient.component"
 
 @NgModule({
-  declarations: [AppComponent, DoctorComponent, PatientComponent, SidebarComponent, AddDoctorComponent, DeleteDoctorComponent, ViewDoctorComponent],
+  declarations: [
+    AppComponent,
+    DoctorComponent,
+    PatientComponent,
+    SidebarComponent,
+    AddDoctorComponent,
+    DeleteDoctorComponent,
+    ViewDoctorComponent,
+    AddPatientComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

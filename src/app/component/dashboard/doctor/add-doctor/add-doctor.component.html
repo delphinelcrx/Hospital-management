@@ -6,6 +6,7 @@
     <mat-grid-list cols="2">
       <mat-grid-tile>
         <div>
+          <!-- Name field -->
           <mat-form-field>
             <mat-label>{{ t("doctors.addDoctor.matDialog-field-name") }}</mat-label>
             <input matInput placeholder="pat@example.com" formControlName="name" required />
@@ -13,6 +14,8 @@
               {{ t("doctors.addDoctor.matDialog-field-name-error") }}
             </mat-error>
           </mat-form-field>
+
+          <!-- Mobile field -->
           <mat-form-field>
             <mat-label>{{ t("doctors.addDoctor.matDialog-field-mobile") }}</mat-label>
             <input matInput placeholder="0475947654" formControlName="mobile" required />
@@ -20,6 +23,8 @@
               {{ t("doctors.addDoctor.matDialog-field-mobile-error") }}
             </mat-error>
           </mat-form-field>
+
+          <!-- Email field -->
           <mat-form-field>
             <mat-label>{{ t("doctors.addDoctor.matDialog-field-email") }}</mat-label>
             <input matInput placeholder="pat@example.com" formControlName="email" required />
@@ -27,6 +32,8 @@
               {{ t("doctors.addDoctor.matDialog-field-email-error") }}
             </mat-error>
           </mat-form-field>
+
+          <!-- Qualification field -->
           <mat-form-field>
             <mat-label>{{ t("doctors.addDoctor.matDialog-field-qualification") }}</mat-label>
             <input matInput placeholder="ex: MBBS" formControlName="qualification" required />
@@ -39,6 +46,7 @@
 
       <mat-grid-tile>
         <div>
+          <!-- Gender field -->
           <mat-label class="me-3">{{ t("doctors.addDoctor.matDialog-field-gender") }}</mat-label>
           <br />
           <mat-radio-group aria-label="Select a gender" color="primary" formControlName="gender">
@@ -47,6 +55,7 @@
             <mat-radio-button value="Other">{{ t("doctors.addDoctor.matDialog-field-gender-other") }}</mat-radio-button>
           </mat-radio-group>
 
+          <!-- Department field -->
           <mat-form-field>
             <mat-label>{{ t("doctors.addDoctor.matDialog-field-department") }}</mat-label>
             <mat-select formControlName="department" name="department">
@@ -57,6 +66,7 @@
             </mat-error>
           </mat-form-field>
 
+          <!-- Birthdate field -->
           <mat-form-field>
             <mat-label>{{ t("doctors.addDoctor.matDialog-field-birthdate") }}</mat-label>
             <input matInput [matDatepicker]="picker" formControlName="birthdate" />
@@ -72,6 +82,7 @@
     </mat-grid-list>
   </mat-dialog-content>
 
+  <!-- Buttons -->
   <div mat-dialog-actions>
     <button mat-raised-button mat-dialog-close (click)="cancelRegistration()">{{ t("matDialog.cancelButton") }}</button>
     <button mat-raised-button color="primary" mat-dialog-close cdkFocusInitial (click)="registerDoctor()" [disabled]="form.invalid">{{ buttonName }}</button>

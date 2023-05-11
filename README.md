@@ -58,3 +58,11 @@ Et définir les traductions dans les fichiers .json :
   "name": "My name is {{name}}"
 }
 ```
+
+### Points de blocage rencontrés :
+
+- Traduire des valeurs enregistrées en bdd, par exemple : le département d'un médecin dans le tableau qui affiche les médecins.
+
+- Traduire un élément intégré à angular material : le "item per page" en bas du tableau
+
+Pour ces 2 cas j'ai essayé des choses mais sans succès.

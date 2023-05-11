@@ -8,6 +8,8 @@ import { Injectable } from "@angular/core"
 export class DataService {
   constructor(private afs: AngularFirestore) {}
 
+  /** Doctors **/
+
   addDoctor(doctor: any) {
     doctor.id = this.afs.createId()
     return this.afs.collection("Doctor/").add(doctor)
@@ -27,5 +29,12 @@ export class DataService {
 
   getDoctorById(id: string) {
     return this.afs.doc("Doctor/" + id).valueChanges()
+  }
+
+  /** Patient **/
+
+  addPatient(patient: any) {
+    patient.patient_id = this.afs.createId()
+    return this.afs.collection("Patient/").add(patient)
   }
 }
