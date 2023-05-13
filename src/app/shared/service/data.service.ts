@@ -1,5 +1,4 @@
 import { AngularFirestore } from "@angular/fire/compat/firestore"
-import { Doctor } from "./../model/doctor"
 import { Injectable } from "@angular/core"
 
 @Injectable({
@@ -40,5 +39,17 @@ export class DataService {
 
   getAllPatients() {
     return this.afs.collection("Patient/").snapshotChanges()
+  }
+
+  updatePatient(patient: any) {
+    return this.afs.doc("Patient/" + patient.patient_id).update(patient)
+  }
+
+  deletePatient(id: string) {
+    return this.afs.doc("Patient/" + id).delete()
+  }
+
+  getPatientById(id: string) {
+    return this.afs.doc("Patient/" + id).valueChanges()
   }
 }

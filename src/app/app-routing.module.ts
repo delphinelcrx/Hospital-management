@@ -3,6 +3,7 @@ import { ViewDoctorComponent } from "./component/dashboard/doctor/view-doctor/vi
 import { PatientComponent } from "./component/dashboard/patient/patient.component"
 import { NgModule } from "@angular/core"
 import { RouterModule, Routes } from "@angular/router"
+import { ViewPatientComponent } from "./component/dashboard/patient/view-patient/view-patient.component"
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
       { path: "patient", component: PatientComponent },
       { path: "doctor", component: DoctorComponent },
       { path: "doctor/:id", component: ViewDoctorComponent },
+      { path: "patient/:id", component: ViewPatientComponent },
     ],
   },
 ]

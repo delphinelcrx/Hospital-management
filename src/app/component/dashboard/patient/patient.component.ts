@@ -9,6 +9,7 @@ import { Doctor } from "src/app/shared/model/doctor"
 import { MatPaginator } from "@angular/material/paginator"
 import { MatSort } from "@angular/material/sort"
 import { MatTableDataSource } from "@angular/material/table"
+import { DeletePatientComponent } from "./delete-patient/delete-patient.component"
 
 @Component({
   selector: "app-patient",
@@ -87,11 +88,53 @@ export class PatientComponent implements OnInit {
     return doctorName
   }
 
-  viewPatient(row: any) {}
+  viewPatient(row: any) {
+    window.open("dashboard/patient/" + row.patient_id, "_blank")
+  }
 
-  editPatient(row: any) {}
+  editPatient(row: any) {
+    if (row.patient_id == null || row.patient_name == null) {
+      return
+    }
+    const dialogConfig = new MatDialogConfig()
+    dialogConfig.disableClose = true
+    dialogConfig.autoFocus = true
+    dialogConfig.data = row
+    dialogConfig.data.title = "Edit patient"
+    dialogConfig.data.buttonName = "Update"
+    dialogConfig.data.admission_date = row.admission_date.toDate()
 
-  deletePatient(row: any) {}
+    console.log(dialogConfig.data)
+
+    const dialogRef = this.dialog.open(AddPatientComponent, dialogConfig)
+
+    dialogRef.afterClosed().subscribe((data) => {
+      if (data) {
+        this.dataApi.updatePatient(data)
+        this.openSnackBar("Patient is updated successfully.", "OK")
+      }
+    })
+  }
+
+  deletePatient(row: any) {
+    const dialogConfig = new MatDialogConfig()
+    dialogConfig.disableClose = false
+    dialogConfig.autoFocus = true
+    dialogConfig.data = {
+      title: "Delete patient",
+      patientName: row.patient_name,
+    }
+
+    const dialogRef = this.dialog.open(DeletePatientComponent, dialogConfig)
+
+    dialogRef.afterClosed().subscribe((data) => {
+      if (data) {
+        console.log(row)
+        this.dataApi.deletePatient(row.patient_id)
+        this.openSnackBar("Patient deleted successfully.", "OK")
+      }
+    })
+  }
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action)

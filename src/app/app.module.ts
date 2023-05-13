@@ -19,6 +19,8 @@ import { ViewDoctorComponent } from "./component/dashboard/doctor/view-doctor/vi
 import { HttpClientModule } from "@angular/common/http"
 import { TranslocoRootModule } from "./transloco-root.module"
 import { AddPatientComponent } from "./component/dashboard/patient/add-patient/add-patient.component"
+import { DeletePatientComponent } from "./component/dashboard/patient/delete-patient/delete-patient.component"
+import { ViewPatientComponent } from "./component/dashboard/patient/view-patient/view-patient.component"
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { AddPatientComponent } from "./component/dashboard/patient/add-patient/a
     DeleteDoctorComponent,
     ViewDoctorComponent,
     AddPatientComponent,
+    DeletePatientComponent,
+    ViewPatientComponent,
   ],
   imports: [
     BrowserModule,
