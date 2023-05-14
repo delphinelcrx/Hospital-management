@@ -4,6 +4,8 @@ import { PatientComponent } from "./component/dashboard/patient/patient.componen
 import { NgModule } from "@angular/core"
 import { RouterModule, Routes } from "@angular/router"
 import { ViewPatientComponent } from "./component/dashboard/patient/view-patient/view-patient.component"
+import { LoginComponent } from "./component/auth/login/login.component"
+import { AuthguardGuard } from "./shared/guard/authguard.guard"
 
 const routes: Routes = [
   {
@@ -15,7 +17,10 @@ const routes: Routes = [
       { path: "doctor/:id", component: ViewDoctorComponent },
       { path: "patient/:id", component: ViewPatientComponent },
     ],
+    canActivate: [AuthguardGuard],
   },
+  { path: "login", component: LoginComponent },
+  { path: "", redirectTo: "login", pathMatch: "full" },
 ]
 
 @NgModule({
