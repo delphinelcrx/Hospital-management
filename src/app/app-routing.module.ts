@@ -6,6 +6,7 @@ import { RouterModule, Routes } from "@angular/router"
 import { ViewPatientComponent } from "./component/dashboard/patient/view-patient/view-patient.component"
 import { LoginComponent } from "./component/auth/login/login.component"
 import { AuthguardGuard } from "./shared/guard/authguard.guard"
+import { SidebarComponent } from "./component/dashboard/sidebar/sidebar.component"
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: "patient/:id", component: ViewPatientComponent },
     ],
     canActivate: [AuthguardGuard],
+    component: SidebarComponent,
   },
   { path: "login", component: LoginComponent },
   { path: "", redirectTo: "login", pathMatch: "full" },

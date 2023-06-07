@@ -11,7 +11,7 @@ export class AuthService {
   login(username: string, password: string) {
     this.auth
       .signInWithEmailAndPassword(username, password)
-      .then((result) => {
+      .then(() => {
         this.auth.authState.subscribe(async (user) => {
           if (user) {
             localStorage.setItem("user", JSON.stringify(user))
