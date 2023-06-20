@@ -38,8 +38,10 @@ export class PatientComponent implements OnInit {
     dialogConfig.disableClose = true
     dialogConfig.autoFocus = true
     dialogConfig.data = {
-      title: "Register patient",
-      buttonName: "Register",
+      // title: "Register patient",
+      // buttonName: "Register",
+      title: this.translocoService.translate("patients.addPatient.matDialog-title"),
+      buttonName: this.translocoService.translate("matDialog.registerButton"),
     }
 
     const dialogRef = this.dialog.open(AddPatientComponent, dialogConfig)
@@ -49,7 +51,7 @@ export class PatientComponent implements OnInit {
         console.log("Registred patient: ", data)
         console.log(data.doctor_id)
         this.dataApi.addPatient(data)
-        this.openSnackBar("Registration of patient is successfull.", "OK")
+        this.openSnackBar(this.translocoService.translate("patients.addPatient.validMessage"), "OK")
       }
     })
   }
@@ -111,7 +113,7 @@ export class PatientComponent implements OnInit {
     dialogRef.afterClosed().subscribe((data) => {
       if (data) {
         this.dataApi.updatePatient(data)
-        this.openSnackBar("Patient is updated successfully.", "OK")
+        this.openSnackBar(this.translocoService.translate("patients.editPatient.validMessage"), "OK")
       }
     })
   }
@@ -121,7 +123,7 @@ export class PatientComponent implements OnInit {
     dialogConfig.disableClose = false
     dialogConfig.autoFocus = true
     dialogConfig.data = {
-      title: "Delete patient",
+      title: this.translocoService.translate("patients.deletePatient.matDialog-title"),
       patientName: row.patient_name,
     }
 
@@ -131,7 +133,7 @@ export class PatientComponent implements OnInit {
       if (data) {
         console.log(row)
         this.dataApi.deletePatient(row.patient_id)
-        this.openSnackBar("Patient deleted successfully.", "OK")
+        this.openSnackBar(this.translocoService.translate("patients.deletePatient.validMessage"), "OK")
       }
     })
   }

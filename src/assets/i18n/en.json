@@ -2,17 +2,22 @@
   "sidebar": {
     "app-title": "Hospital management",
     "link-patient": "Patient",
-    "link-doctor": "Doctor"
+    "link-doctor": "Doctor",
+    "signOut": "Sign out"
   },
   "matDialog": {
     "cancelButton": "Cancel",
-    "registerButton": "Register"
+    "registerButton": "Register",
+    "noThanksButton": "No thanks",
+    "deleteButton": "Delete"
   },
   "tab": {
-    "filters-input": "Filters"
+    "filters-input": "Filters",
+    "noData": "No data matching the filter"
   },
   "doctors": {
     "tab": {
+      "pageTitle": "Doctor list",
       "row-name": "Name",
       "row-mobile": "Mobile",
       "row-email": "Email",
@@ -20,6 +25,14 @@
       "row-gender": "Gender",
       "row-action": "Action",
       "itemsPerPage": "Items per page :"
+    },
+    "details": {
+      "pageTitle": "Doctor information",
+      "pageTitle2": "Doctor's patient list",
+      "email": "Email",
+      "mobile": "Mobile",
+      "gender": "Gender",
+      "department": "Department"
     },
     "addDoctor": {
       "addDoctor-button": "Add doctor",
@@ -41,6 +54,14 @@
       "matDialog-field-birthdate": "Birthdate",
       "matDialog-field-birthdate-error": "Choose valide birthdate",
       "validMessage": "Registration of doctor is successfull."
+    },
+    "deleteDoctor": {
+      "matDialog-title": "Delete doctor",
+      "confirmationMessage": "Are you sure you want to delete",
+      "validMessage": "Doctor deleted successfully."
+    },
+    "editDoctor": {
+      "validMessage": "Doctor is updated successfully."
     },
     "actionMenu": {
       "view": "View",
@@ -69,6 +90,54 @@
       "cardiacSurgery": "Cardiac surgery",
       "outpatientDepartment": "Outpatient Department",
       "intensiveCareUnit": "Intensive Care Unit"
+    }
+  },
+  "patients": {
+    "tab": {
+      "pageTitle": "Patient list",
+      "row-name": "Name",
+      "row-mobile": "Mobile",
+      "row-doctor": "Doctor",
+      "row-gender": "Gender",
+      "row-prescription": "Prescription",
+      "row-action": "Action",
+      "itemsPerPage": "Items per page :"
+    },
+    "details": {
+      "pageTitle": "Patient information",
+      "patientName": "Patient name",
+      "doctorName": "Doctor name",
+      "mobile": "Mobile",
+      "prescription": "Prescription",
+      "gender": "Gender",
+      "admissionDate": "Admission date"
+    },
+    "addPatient": {
+      "addPatient-button": "Add patient",
+      "matDialog-title": "Register patient",
+      "matDialog-field-name": "Full name",
+      "matDialog-field-name-error": "Enter full name",
+      "matDialog-field-mobile": "Mobile number",
+      "matDialog-field-mobile-error": "Enter valid mobile number",
+      "matDialog-field-prescription": "Prescription",
+      "matDialog-field-prescription-error": "Enter valid prescription",
+      "matDialog-field-gender": "Gender",
+      "matDialog-field-gender-male": "Male",
+      "matDialog-field-gender-female": "Female",
+      "matDialog-field-gender-other": "Other",
+      "matDialog-field-doctor": "Doctor",
+      "matDialog-field-doctor-error": "Enter valid doctor",
+      "matDialog-field-admissionDate": "Admission date",
+      "matDialog-field-admissionDate-error": "Choose valide admission date",
+      "validMessage": "Registration of patient is successfull."
+    },
+    "deletePatient": {
+      "matDialog-title": "Delete patient",
+      "confirmationMessage": "Are you sure you want to delete",
+      "validMessage": "Patient deleted successfully."
+    },
+    "editPatient": {
+      "validMessage": "Patient is updated successfully."
     }
   }
 }

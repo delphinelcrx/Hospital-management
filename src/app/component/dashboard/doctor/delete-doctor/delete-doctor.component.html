@@ -1,8 +1,10 @@
-<h1 mat-dialog-title>{{ title }}</h1>
-<div mat-dialog-content>
-  <p>Are you sure you want to delete {{ doctorName }} ?</p>
-</div>
-<div mat-dialog-actions>
-  <button mat-raised-button (click)="close()">No Thanks</button>
-  <button mat-raised-button color="accent" (click)="delete()">Delete</button>
-</div>
+<ng-container *transloco="let t">
+  <h1 mat-dialog-title>{{ title }}</h1>
+  <div mat-dialog-content>
+    <p>{{ t("doctors.deleteDoctor.confirmationMessage") }} {{ doctorName }} ?</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button (click)="close()">{{ t("matDialog.noThanksButton") }}</button>
+    <button mat-raised-button color="accent" (click)="delete()">{{ t("matDialog.deleteButton") }}</button>
+  </div>
+</ng-container>

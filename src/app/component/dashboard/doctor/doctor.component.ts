@@ -67,7 +67,7 @@ export class DoctorComponent implements OnInit {
     dialogRef.afterClosed().subscribe((data) => {
       if (data) {
         this.dataApi.updateDoctor(data)
-        this.openSnackBar("Doctor is updated successfully.", "OK")
+        this.openSnackBar(this.translocoService.translate("doctors.editDoctor.validMessage"), "OK")
       }
     })
   }
@@ -77,7 +77,7 @@ export class DoctorComponent implements OnInit {
     dialogConfig.disableClose = false
     dialogConfig.autoFocus = true
     dialogConfig.data = {
-      title: "Delete doctor",
+      title: this.translocoService.translate("doctors.deleteDoctor.matDialog-title"),
       doctorName: row.name,
     }
 
@@ -87,7 +87,7 @@ export class DoctorComponent implements OnInit {
       if (data) {
         console.log("Registred doctor: ", data)
         this.dataApi.deleteDoctor(row.id)
-        this.openSnackBar("Doctor deleted successfully.", "OK")
+        this.openSnackBar(this.translocoService.translate("doctors.deleteDoctor.validMessage"), "OK")
       }
     })
   }

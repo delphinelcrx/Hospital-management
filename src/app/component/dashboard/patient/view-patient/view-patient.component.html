@@ -1,23 +1,23 @@
 <ng-container *transloco="let t">
-  <h2 style="font-weight: 700" class="m-3" color="primary">Patient Information</h2>
+  <h2 style="font-weight: 700" class="m-3" color="primary">{{ t("patients.details.pageTitle") }}</h2>
   <mat-card class="m-3">
     <mat-card-title class="pb-2">
-      Patient Name : <b>{{ patientObj?.patient_name }}</b>
+      {{ t("patients.details.patientName") }} : <b>{{ patientObj?.patient_name }}</b>
     </mat-card-title>
     <mat-divider></mat-divider>
 
     <div class="row pt-3">
       <div class="col-md-6">
         <mat-card-content>
-          <span> Doctor Name : </span> {{ patientObj?.doctor_name }} <br />
-          <span> Mobile : </span> {{ patientObj?.patient_mobile }} <br />
-          <span> Prescription : </span> {{ patientObj?.prescription }}
+          <span> {{ t("patients.details.doctorName") }} : </span> {{ patientObj?.doctor_name }} <br />
+          <span> {{ t("patients.details.mobile") }} : </span> {{ patientObj?.patient_mobile }} <br />
+          <span> {{ t("patients.details.prescription") }} : </span> {{ patientObj?.prescription }}
         </mat-card-content>
       </div>
       <div class="col-md-6">
         <mat-card-content>
-          <span> Gender : </span> {{ patientObj?.patient_gender }} <br />
-          <span> Adminssion Date : </span> {{ patientObj?.admission_date | date }}
+          <span> {{ t("patients.details.gender") }} : </span> {{ patientObj?.patient_gender }} <br />
+          <span> {{ t("patients.details.admissionDate") }} : </span> {{ patientObj?.admission_date | date }}
         </mat-card-content>
       </div>
     </div>

@@ -1,4 +1,5 @@
 <ng-container *transloco="let t">
+  <h2 style="font-weight: 700" class="m-3" color="primary">{{ t("doctors.tab.pageTitle") }}</h2>
   <div class="container">
     <!-- Add doctors button -->
     <div class="row">
@@ -80,7 +81,7 @@
 
         <!-- Row shown when there is no matching data. -->
         <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="4">No data matching the filter "{{ input.value }}"</td>
+          <td class="mat-cell" colspan="4">{{ t("tab.noData") }} "{{ input.value }}"</td>
         </tr>
       </table>
 

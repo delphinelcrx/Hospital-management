@@ -8,7 +8,7 @@
         <div>
           <!-- Name field -->
           <mat-form-field>
-            <mat-label>{{ t("doctors.addDoctor.matDialog-field-name") }}</mat-label>
+            <mat-label>{{ t("doctors.addDoctor.matDialog-field-name") }} :</mat-label>
             <input matInput placeholder="pat@example.com" formControlName="name" required />
             <mat-error *ngIf="form.get('name')?.invalid || form.get('name')?.dirty || form.get('name')?.touched">
               {{ t("doctors.addDoctor.matDialog-field-name-error") }}

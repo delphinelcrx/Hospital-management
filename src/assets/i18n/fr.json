@@ -2,17 +2,22 @@
   "sidebar": {
     "app-title": "Gestion hospitalière",
     "link-patient": "Patient",
-    "link-doctor": "Docteur"
+    "link-doctor": "Docteur",
+    "signOut": "Déconnexion"
   },
   "matDialog": {
     "cancelButton": "Fermer",
-    "registerButton": "Enregistrer"
+    "registerButton": "Enregistrer",
+    "noThanksButton": "Non merci",
+    "deleteButton": "Supprimer"
   },
   "tab": {
-    "filters-input": "Filtres"
+    "filters-input": "Filtres",
+    "noData": "Aucune information ne correspond au filtre"
   },
   "doctors": {
     "tab": {
+      "pageTitle": "Liste des docteurs",
       "row-name": "Nom",
       "row-mobile": "Mobile",
       "row-email": "Email",
@@ -20,6 +25,14 @@
       "row-gender": "Genre",
       "row-action": "Action",
       "itemsPerPage": "Eléments par page :"
+    },
+    "details": {
+      "pageTitle": "Informations du docteur",
+      "pageTitle2": "Liste de ses patients",
+      "email": "Email",
+      "mobile": "Mobile",
+      "gender": "Genre",
+      "department": "Département"
     },
     "addDoctor": {
       "addDoctor-button": "Ajouter un docteur",
@@ -40,12 +53,20 @@
       "matDialog-field-department-error": "Entrer un département valide",
       "matDialog-field-birthdate": "Date de naissance",
       "matDialog-field-birthdate-error": "Choisir une date de naissance valide",
-      "validMessage": "Le doctor est enregistré avec succès."
+      "validMessage": "Le docteur est enregistré avec succès."
     },
     "actionMenu": {
       "view": "Voir",
       "edit": "Modifier",
       "delete": "Supprimer"
+    },
+    "deleteDoctor": {
+      "matDialog-title": "Supprimer un docteur",
+      "confirmationMessage": "Êtes-vous sûres de vouloir supprimer",
+      "validMessage": "Le docteur a été supprimé avec succès."
+    },
+    "editDoctor": {
+      "validMessage": "Le docteur a été édité avec succès."
     },
     "departments": {
       "orthopedics": "Orthopédie",
@@ -69,6 +90,54 @@
       "cardiacSurgery": "Chirurgie cardiaque",
       "outpatientDepartment": "Service ambulatoire",
       "intensiveCareUnit": "Unité de soins intenses"
+    }
+  },
+  "patients": {
+    "tab": {
+      "pageTitle": "Liste des patients",
+      "row-name": "Nom",
+      "row-mobile": "Mobile",
+      "row-doctor": "Docteur",
+      "row-gender": "Genre",
+      "row-prescription": "Prescription",
+      "row-action": "Action",
+      "itemsPerPage": "Eléments par page :"
+    },
+    "details": {
+      "pageTitle": "Informations du patient",
+      "patientName": "Nom du patient",
+      "doctorName": "Nom du docteur",
+      "mobile": "Mobile",
+      "prescription": "Prescription",
+      "gender": "Genre",
+      "admissionDate": "Date d'admission"
+    },
+    "addPatient": {
+      "addPatient-button": "Ajouter un patient",
+      "matDialog-title": "Enregistrer un patient",
+      "matDialog-field-name": "Nom",
+      "matDialog-field-name-error": "Entrer un nom",
+      "matDialog-field-mobile": "Numéro de mobile",
+      "matDialog-field-mobile-error": "Entrer un numéro de mobile valide",
+      "matDialog-field-prescription": "Prescription",
+      "matDialog-field-prescription-error": "Entrer une prescription",
+      "matDialog-field-gender": "Genre",
+      "matDialog-field-gender-male": "Male",
+      "matDialog-field-gender-female": "Femelle",
+      "matDialog-field-gender-other": "Autre",
+      "matDialog-field-doctor": "Docteur",
+      "matDialog-field-doctor-error": "Entrer un docteur valide",
+      "matDialog-field-admissionDate": "Date d'admission",
+      "matDialog-field-admissionDate-error": "Choisir une date d'admission valide",
+      "validMessage": "Le patient est enregistré avec succès."
+    },
+    "deletePatient": {
+      "matDialog-title": "Supprimer un patient",
+      "confirmationMessage": "Êtes-vous sûres de vouloir supprimer",
+      "validMessage": "Le patient a été supprimé avec succès."
+    },
+    "editPatient": {
+      "validMessage": "Le patient a été édité avec succès."
     }
   }
 }
